@@ -37,7 +37,7 @@ A higher-order function is a function that takes another function(s) as an argum
 
 3. What is closure?
 
-A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). ... In JavaScript, closures are created every time a function is created, at function creation time.
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). ... In JavaScript, closures are created every time a function is created, at function creation time.Clousers gives us the ability to put functions together.Code that's been identified elsewhere that we can use later. We can pass values down but we can't pass them back up.
 
 4. Describe the four rules of the 'this' keyword.
 
