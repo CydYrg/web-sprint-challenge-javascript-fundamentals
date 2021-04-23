@@ -2,6 +2,24 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal.?? */
 
+
+/*
+ANSWER
+
+Because of how javascript, and most languages, scope variables, you can't access variables declared inside a 
+function from outside a function. The variable belongs to the function's scope only, not the global scope.
+Fortunately, functions inherit the scope of their caller.So the easiest way to make your variable accessible
+from outside the function is to first declare outside the function, then use it inside the function.
+A nested function is a function that is completely contained within a parent function.Any function in a 
+program file can include a nested function.The primary difference between nested functions and other types of 
+functions is that they can access and modify variables that are defined in their parent functions.As a result:
+
+-Nested functions can use variables that are not explicitly passed as input arguments.
+
+-In a parent function, you can create a handle to a nested function that contains the data necessary to run the nested function.
+*/
+
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -28,11 +46,14 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let summation = 0;
+  for (let i = 1; i <= number; i++) {
+    summation += i;
   }
- 
+  return summation;
+  }
+
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -56,9 +77,28 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+/*  function animalNames(displayNames){
+    zooAnimals.forEach(animalNames(displayName){
+     return displayNames.push(animalName.zooAnimals.scientificName());
+    })
+  }*/
+/*  function animalNames(item){
+    let displayNames = [];
+    zooAnimals.forEach(animalNames(displayNames));{
+     return displayNames.push(`name:${item.animalName},scientific${item.scientificName}`);
+    }
+  }*/
+function animalNames(array) {
+  const displayNames = [];
+  array.forEach(function(item) {
+    return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
+  });
+  return displayNames;
+}
+
+//console.log(animalNames(zooAnimals))
+
+
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -67,9 +107,12 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function lowerCaseNames(array){
+    const zooAnimals = [];
+    array.map(function(item) {
+      return item.animal_names.toLowerCase();
+  });
+}
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
