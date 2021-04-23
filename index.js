@@ -77,17 +77,6 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-/*  function animalNames(displayNames){
-    zooAnimals.forEach(animalNames(displayName){
-     return displayNames.push(animalName.zooAnimals.scientificName());
-    })
-  }*/
-/*  function animalNames(item){
-    let displayNames = [];
-    zooAnimals.forEach(animalNames(displayNames));{
-     return displayNames.push(`name:${item.animalName},scientific${item.scientificName}`);
-    }
-  }*/
 function animalNames(array) {
   const displayNames = [];
   array.forEach(function(item) {
@@ -108,20 +97,24 @@ function animalNames(array) {
   */
 
   function lowerCaseNames(array){
-    const zooAnimals = [];
-    array.map(function(item) {
-      return item.animal_names.toLowerCase();
+    const smallAnimals = array.map(function(item) {
+      return item.animal_name.toLowerCase();
   });
+  return smallAnimals
 }
-  
+
+console.log(lowerCaseNames(zooAnimals))
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(array){
+   const lowPops = array.filter(function(item) {
+     return item.population < 5;
+   });
+   return lowPops 
   }
   
 
